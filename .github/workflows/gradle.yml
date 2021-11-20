@@ -22,8 +22,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Grant execute permission for gradlew
-      run: chmod +x ./rest/gradlew
+      run: chmod +x ./gradlew
     - name: запускаем SUT
       run: java -jar ./artifacts/app-mbank.jar -P:profile=test &
     - name: Build with Gradle
-      run: ./rest/gradlew test --info -Dselenide.headless=true
+      run: ./gradlew test --info -Dselenide.headless=true
