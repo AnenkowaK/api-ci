@@ -1,5 +1,6 @@
 package ru.netology.rest;
 
+import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -18,6 +19,7 @@ class MobileBankApiTestV4 {
       // Проверки
       .then()
           .statusCode(200)
+          .contentType(ContentType.JSON)
           .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
       ;
     }
